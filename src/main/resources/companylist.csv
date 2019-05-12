@@ -1,0 +1,24 @@
+symbol,name,price,id
+MSFT,Microsoft Corporation,127.13,1
+AMZN,Amazon.com Inc.,1889.98,2
+AAPL,Apple Inc.,197.18,3
+GOOGL,Alphabet Inc.,1167.64,3
+FB,Facebook Inc.,188.34,4
+CSCO,Cisco Systems Inc.,53.36,5
+INTC,Intel Corporation,46.20,6
+CMCSA,Comcast Corporation,43.15,7
+PEP,Pepsico Inc.,128.01,8
+NFLX,Netflix Inc.,361.04,9
+ADBE,Adobe Inc.,278.48,10
+PYPL,PayPal Holdings Inc.,110.41,11
+AVGO,Broadcom Inc.,303.96,12
+COST,Costco Wholesale Corporation,247.02,13
+NVDA,NVIDIA Corporation,168.82,14
+TXN,Texas Instruments Incorporated,112.60,15
+AMGN,Amgen Inc.,94.39,16
+QCOM,QUALCOMM Incorporated,85.84,17
+SBUX,Starbucks Corporation,78.42,18
+GILD,Gilead Sciences Inc.,65.57,19
+CHTR,Charter Communications Inc.,35.51,20
+BKNG,Booking Holdings Inc.,1829.85,21
+MDLZ,Mondelez International Inc.,51.87,22
