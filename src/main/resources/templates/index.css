@@ -1,12 +1,3 @@
-<!DOCTYPE html>
-<html xmlns:th="https://www.thymeleaf.org">
-<head lang="en">
-    <meta charset="UTF-8">
-    <title> Tickerboard </title>
-<!--    Style sheets weren't working with standard import in React for unknown reason, so they're
-        being included here instead.
- -->
-    <style>
 body {
   font: normal medium/1.4 sans-serif;
 }
@@ -22,7 +13,7 @@ body {
 .table-striped {
   font: normal medium/1.4 sans-serif;
   border-collapse: collapse;
-  width: 600;
+  width: 100%;
 }
 .table-striped th, td {
   padding-left: 10px;
@@ -32,13 +23,3 @@ body {
 .table-striped tbody tr:nth-child(odd) {
   background: #eee;
 }
-</style>
-</head>
-<body>
-
-    <div id="react"></div>
-
-    <script src="built/bundle.js"></script>
-
-</body>
-</html>

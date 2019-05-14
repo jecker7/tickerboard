@@ -11,9 +11,13 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 import org.springframework.core.io.ClassPathResource;
 
-// Spring's @Component annotation lets @SpringBootAppliaction automatically pick up the component
-// and the component is automatically created upon execution of program
-// CommandLineRunner is implemented so that it gets run after all the beans are created and registered
+/**
+ * Initializes our JPA StockRepository by reading Stock information from a CSV file and creates
+ * entries  in StockRepository for each stock listed in the file as follows:
+ *  "String symbol, String companyName, Double price, int id"
+ * The "Data" annotation is used by lombok to build getters and setters for our class variables
+ * The "@Component" annotation tells Spring Boot to automatically create this component at runtime
+ */
 @Data
 @Component
 public class DatabaseLoader implements CommandLineRunner {
@@ -26,7 +30,12 @@ public class DatabaseLoader implements CommandLineRunner {
     public DatabaseLoader(StockRepository repository) {
         this.repository = repository;
     }
-    // method to load our stocks from a CSV file
+
+    /**
+     * Parses stocks from the CSV file in fileName and returns a list of
+     * @param fileName
+     * @return
+     */
     public List<Stock> loadCompanyList(String fileName){
         try {
             CsvSchema bootstrapSchema = CsvSchema.emptySchema().withHeader();
@@ -42,18 +51,28 @@ public class DatabaseLoader implements CommandLineRunner {
         }
     }
 
+    /**
+     * Getter for this.companyList
+     * @return List<Stock> companyList - a list of company stocks in format:
+     * "String symbol, String companyName, Double price, int id"
+     */
     public List<Stock> getCompanyList(){
         List<Stock> companyList = this.loadCompanyList(this.CSVFile);
         return companyList;
     }
 
 
-
+    /**
+     * Function to save our stocks into repository at runtime
+     * @param strings - command line args
+     * @throws Exception
+     */
     // run() method is invoked with command line args to load data
     @Override
     public void run(String... strings) throws Exception {
         List<Stock>stockList = this.loadCompanyList(CSVFile);
-        for (Stock oldStock : stockList)
+        for (Stock oldStock : stockList) {
             this.repository.save(oldStock);
+        }
     }
 }
